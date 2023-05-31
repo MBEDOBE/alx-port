@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./components/NavBars/NavBar";
+import Hero from "./components/Hero";
+import Landing from "./pages/Landing";
+import NavBar2 from "./components/NavBars/NavBar2";
+import Footer from "./components/Footer";
+import Glasslogin from "./components/Glasslogin";
+import Login from "./components/Login";
+import Login2 from "./components/Glasslogin";
+import Log from "./components/Log";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header className="sticky inset-0 z-10">
+        {/* <Navbar /> */}
+        <NavBar2/>
       </header>
-    </div>
+
+      <main >
+        <Landing />
+
+        
+        <Footer/>
+      </main>
+    </>
   );
-}
+};
 
 export default App;
