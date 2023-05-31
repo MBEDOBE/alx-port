@@ -24,7 +24,7 @@ export default function Footer() {
           <a href="#!" className="mr-6 text-neutral-600 dark:text-neutral-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4"
+              className="h-6 w-6"
               fill="#ffffff"
               viewBox="0 0 24 24"
             >
@@ -35,7 +35,7 @@ export default function Footer() {
           <a href="#!" className="mr-6 text-neutral-600 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4"
+              className="h-6 w-6"
               fill="#ffffff"
               viewBox="0 0 24 24"
             >

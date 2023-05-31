@@ -66,12 +66,12 @@ const navListMenuItems = [
     title: "SHS",
     description: "Advanced education with specialized subjects and college preparation.",
   },
-  {
+  /* {
     color: "cyan",
     icon: PuzzlePieceIcon,
     title: "WebDev",
     description: "High quality UI Kits helps you to 2x faster.",
-  },
+  }, */
 ];
 
 function NavListMenu() {
