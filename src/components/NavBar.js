@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { styled } from "@mui/material";
 
 import {
   Navbar,
@@ -33,7 +32,6 @@ import {
   PuzzlePieceIcon,
   GiftIcon,
 } from "@heroicons/react/24/outline";
-import Login2 from "../Glasslogin";
 
 const colors = {
   blue: "bg-blue-50 text-blue-500",
@@ -193,7 +191,7 @@ function NavList() {
   );
 }
 
-export default function NavBar2() {
+export default function NavBar() {
   const [openNav, setOpenNav] = useState(false);
 
   React.useEffect(() => {

@@ -9,10 +9,15 @@ const About = () => {
       <div className="flex lg:flex-row flex-col lg:gap-8 sm:gap-10 gap-12">
         <div className="w-full lg:w-6/12 justify-center">
           <h2 className="w-full font-bold lg:text-4xl text-3xl lg:leading-10 leading-9">
-            We are on a mission to provide high-quality educational resources to students of all ages and backgrounds.
+            We are on a mission to provide high-quality educational resources to
+            students of all ages and backgrounds.
           </h2>
           <p className="font-normal text-base leading-6 text-gray-600  mt-6">
-          Our educational resource website is a comprehensive platform designed to empower Ghanaian students in their learning journey. With a vast collection of free educational videos, practice exercises, and study materials, we provide a valuable resource for students from primary to senior high school. 
+            EdInfoHub is a comprehensive platform designed to empower Ghanaian
+            students in their learning journey. With a vast collection of free
+            educational videos, practice exercises, and study materials, we
+            provide a valuable resource for students from primary to senior high
+            school.
           </p>
         </div>
         <div className="w-full lg:w-6/12">
@@ -65,17 +70,15 @@ const About = () => {
             Founded
           </p>
           <p className="font-normal text-base leading-6 text-gray-600 dark:text-gray-200 mt-6">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
+            2023
           </p>
         </div>
         <div>
           <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800  mt-6">
-            50M montly enrichments
+            Constant Content Updates
           </p>
           <p className="font-normal text-base leading-6 text-gray-600  mt-6">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
+            Our website will feature quality educational content.
           </p>
         </div>
         <div className="sm:block hidden">
@@ -83,8 +86,8 @@ const About = () => {
             400k User
           </p>
           <p className="font-normal text-base leading-6 text-gray-600  mt-6">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
+            We hope to be able to reach a larger audience and leave a lasting
+            impression with our project.
           </p>
         </div>
       </div>
@@ -150,7 +153,7 @@ const About = () => {
               engaging and
             </li>
             <li className="flex items-center">
-            <svg
+              <svg
                 className="w-4 h-4 mr-1.5 text-green flex-shrink-0"
                 fill="currentColor"
                 viewBox="0 0 20 20"
@@ -170,7 +173,7 @@ const About = () => {
           </p>
           <a
             href="#"
-            className="inline-block bg-blue-500 hover:bg-blue-600 text-blue font-bold py-3 px-6 rounded-lg mt-6"
+            className="inline-block bg-blue-500 hover:bg-hoverDark hover:text-white text-blue font-bold py-3 px-6 rounded-lg mt-6"
           >
             Start Exploring
           </a>
@@ -190,7 +193,8 @@ const About = () => {
                   Resources
                 </p>
                 <p className="mt-2 font-normal text-base leading-6 text-gray-600 dark:text-gray-200">
-                Our site features an extensive library of educational videos, exercises, and study materials.
+                  Our site features an extensive library of educational videos,
+                  exercises, and study materials.
                 </p>
               </div>
             </div>
@@ -207,7 +211,8 @@ const About = () => {
                   Tools
                 </p>
                 <p className="mt-2 font-normal text-base leading-6 text-gray-600 dark:text-gray-200">
-                Interactive learning tools to enhance understanding and retention.
+                  Interactive learning tools to enhance understanding and
+                  retention.
                 </p>
               </div>
             </div>
@@ -224,7 +229,8 @@ const About = () => {
                   Focus
                 </p>
                 <p className="mt-2 font-normal text-base leading-6 text-gray-600 dark:text-gray-200">
-                Personalized learning recommendations based on individual progress and interests.
+                  Personalized learning recommendations based on individual
+                  progress and interests.
                 </p>
               </div>
             </div>
