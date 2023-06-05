@@ -32,6 +32,7 @@ import {
   PuzzlePieceIcon,
   GiftIcon,
 } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 const colors = {
   blue: "bg-blue-50 text-blue-500",
@@ -49,20 +50,23 @@ const navListMenuItems = [
     color: "orange",
     icon: ChatBubbleOvalLeftIcon,
     title: "Primary",
-    description: "Foundational education for young learners in a nurturing environment.",
+    description:
+      "Foundational education for young learners in a nurturing environment.",
   },
 
   {
     color: "purple",
     icon: RocketLaunchIcon,
     title: "JHS",
-    description: "Transition period with a focus on core subjects and exploration.",
+    description:
+      "Transition period with a focus on core subjects and exploration.",
   },
   {
     color: "teal",
     icon: FaceSmileIcon,
     title: "SHS",
-    description: "Advanced education with specialized subjects and college preparation.",
+    description:
+      "Advanced education with specialized subjects and college preparation.",
   },
   /* {
     color: "cyan",
@@ -78,7 +82,7 @@ function NavListMenu() {
 
   const renderItems = navListMenuItems.map(
     ({ icon, title, description, color }, key) => (
-      <a href="#" key={key}>
+      <Link to="#" key={key}>
         <MenuItem className="flex items-center gap-3 rounded-lg">
           <div className={`rounded-lg p-5 ${colors[color]}`}>
             {React.createElement(icon, {
@@ -99,7 +103,7 @@ function NavListMenu() {
             </Typography>
           </div>
         </MenuItem>
-      </a>
+      </Link>
     )
   );
 
@@ -159,7 +163,7 @@ function NavList() {
       >
         <ListItem className="flex items-center gap-2 py-2 pr-4">
           <CubeTransparentIcon className="h-[18px] w-[18px]" />
-          Home
+          <Link to="/">Home</Link>
         </ListItem>
       </Typography>
       <NavListMenu />
@@ -184,7 +188,7 @@ function NavList() {
       >
         <ListItem className="flex items-center gap-2 py-2 pr-4">
           <ChatBubbleLeftRightIcon className="h-[18px] w-[18px]" />
-          Contact
+          <Link to="/contact">Contact</Link>
         </ListItem>
       </Typography>
     </List>
@@ -202,29 +206,32 @@ export default function NavBar() {
   }, []);
 
   return (
-    <Navbar className="mx-auto max-w-screen-xl px-4 py-2">
+    <Navbar className="sticky top-0 mx-auto max-w-screen-xl px-4 py-2">
       <div className="flex items-center justify-between text-blue-gray-900">
-        <a href="#">
+        <Link to="/">
           <img
             className="mr-4 cursor-pointer py-1 max-w-xs max-h-14"
             src="logo.png"
             alt="site logo"
           />
-        </a>
+        </Link>
         <div className="hidden lg:block">
           <NavList />
         </div>
         <div className="hidden gap-2 lg:flex">
-          <button className="middle none center rounded-lg bg-blue py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-contrast transition-all hover:shadow-lg hover:shadow-contrast">
+          <Link
+            to="/login"
+            className="middle none center rounded-lg bg-blue py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-contrast transition-all hover:shadow-lg hover:shadow-contrast"
+          >
             Log In
-          </button>
+          </Link>
 
-          <button
+          <Link to="/register"
             class="middle none center mr-3 rounded-lg border border-green py-3 px-6 font-sans text-xs font-bold uppercase text-green transition-all hover:opacity-75 focus:ring focus:ring-green"
             data-ripple-dark="true"
           >
             Register
-          </button>
+          </Link>
         </div>
         <IconButton
           variant="text"
@@ -242,16 +249,16 @@ export default function NavBar() {
       <Collapse open={openNav}>
         <NavList />
         <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
-        <button className="middle none center rounded-lg bg-blue py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-contrast transition-all hover:shadow-lg hover:shadow-contrast">
+          <Link className="middle none center rounded-lg bg-blue py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-contrast transition-all hover:shadow-lg hover:shadow-contrast">
             Log In
-          </button>
+          </Link>
 
-          <button
+          <Link
             class="middle none center mr-3 rounded-lg border border-green py-3 px-6 font-sans text-xs font-bold uppercase text-green transition-all hover:opacity-75 focus:ring focus:ring-green"
             data-ripple-dark="true"
           >
             Register
-          </button>
+          </Link>
         </div>
       </Collapse>
     </Navbar>

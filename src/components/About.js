@@ -83,7 +83,7 @@ const About = () => {
         </div>
         <div className="sm:block hidden">
           <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800  mt-6">
-            400k User
+            Users Community
           </p>
           <p className="font-normal text-base leading-6 text-gray-600  mt-6">
             We hope to be able to reach a larger audience and leave a lasting
