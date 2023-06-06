@@ -48,14 +48,16 @@ We would like to express our gratitude to the contributors and developers of the
 ## Contact
 
 ## For any inquiries or feedback, please contact us at any of the following:
-## Author
-**D. Mbedobe KUNJI**
-
 
 - [Github](https://github.com/MBEDOBE/)
 - [Youtube](https://youtube.com/@mbedev/)
 - [LinkedIn](https://www.linkedin.com/in/danielmbedobe)
 - [Medium](https://www.medium.com/@danielmbedobe)
 - [Twitter](https://www.twitter.com/@kd_mbedobe)
+
+## Author
+**D. Mbedobe KUNJI**
+
+
 
 Happy learning!
