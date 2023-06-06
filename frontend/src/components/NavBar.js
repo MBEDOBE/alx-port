@@ -201,6 +201,7 @@ export default function NavBar() {
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
+    window.location.replace("/home");
   };
 
   React.useEffect(() => {
@@ -226,12 +227,20 @@ export default function NavBar() {
 
         <div className="hidden gap-2 lg:flex">
           {user ? (
-            <span
-              className="middle none center rounded-lg bg-hoverDark py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-contrast transition-all hover:shadow-lg hover:shadow-contrast"
-              onClick={handleLogout}
-            >
-              {user && "Logout"}
-            </span>
+            <>
+              <Link
+                to="/write"
+                className="middle none center rounded-lg border-2 border-green py-3 px-6 font-sans text-md font-bold uppercase text-blue transition duration-200 hover:bg-hoverLight/25"
+              >
+                {user && "Write"}
+              </Link>
+              <span
+                className="middle none center rounded-lg bg-hoverDark py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-contrast transition-all hover:shadow-lg hover:shadow-contrast"
+                onClick={handleLogout}
+              >
+                {user && "Logout"}
+              </span>
+            </>
           ) : (
             <>
               <Link
