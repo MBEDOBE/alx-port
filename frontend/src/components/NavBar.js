@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-
+import React, { useContext, useState } from "react";
+import { Context } from "../context/Context";
 import {
   Navbar,
   Collapse,
@@ -196,7 +196,12 @@ function NavList() {
 }
 
 export default function NavBar() {
+  const { user, dispatch } = useContext(Context);
   const [openNav, setOpenNav] = useState(false);
+
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
 
   React.useEffect(() => {
     window.addEventListener(
@@ -218,21 +223,35 @@ export default function NavBar() {
         <div className="hidden lg:block">
           <NavList />
         </div>
-        <div className="hidden gap-2 lg:flex">
-          <Link
-            to="/login"
-            className="middle none center rounded-lg bg-blue py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-contrast transition-all hover:shadow-lg hover:shadow-contrast"
-          >
-            Log In
-          </Link>
 
-          <Link to="/register"
-            class="middle none center mr-3 rounded-lg border border-green py-3 px-6 font-sans text-xs font-bold uppercase text-green transition-all hover:opacity-75 focus:ring focus:ring-green"
-            data-ripple-dark="true"
-          >
-            Register
-          </Link>
+        <div className="hidden gap-2 lg:flex">
+          {user ? (
+            <span
+              className="middle none center rounded-lg bg-hoverDark py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-contrast transition-all hover:shadow-lg hover:shadow-contrast"
+              onClick={handleLogout}
+            >
+              {user && "Logout"}
+            </span>
+          ) : (
+            <>
+              <Link
+                to="/login"
+                className="middle none center rounded-lg bg-blue py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-contrast transition-all hover:shadow-lg hover:shadow-contrast"
+              >
+                Log In
+              </Link>
+
+              <Link
+                to="/register"
+                class="middle none center mr-3 rounded-lg border border-green py-3 px-6 font-sans text-xs font-bold uppercase text-green transition-all hover:opacity-75 focus:ring focus:ring-green"
+                data-ripple-dark="true"
+              >
+                Register
+              </Link>
+            </>
+          )}
         </div>
+
         <IconButton
           variant="text"
           color="blue-gray"

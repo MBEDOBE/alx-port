@@ -18,6 +18,7 @@ const Login = () => {
       });
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
     } catch (error) {
+      console.log(error)
       dispatch({ type: "LOGIN_FAILURE" });
     }
   };
@@ -91,6 +92,7 @@ const Login = () => {
                   class="bg-green text-gray-100 p-4 w-full rounded-md tracking-wide
                         font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-hoverDark
                         shadow-lg"
+                        disabled={isFetching}
                 >
                   Log In
                 </button>
