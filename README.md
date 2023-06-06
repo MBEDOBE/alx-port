@@ -44,5 +44,14 @@ We would like to express our gratitude to the contributors and developers of the
 
 For any inquiries or feedback, please contact us at [email protected]
 
-Happy learning!
+## Author
 
+**D. Mbedobe KUNJI**
+
+- [Github](https://github.com/MBEDOBE/)
+- [Youtube](https://youtube.com/@mbedev/)
+- [LinkedIn](https://www.linkedin.com/in/danielmbedobe)
+- [Medium](https://www.medium.com/@danielmbedobe)
+- [Twitter](https://www.twitter.com/@kd_mbedobe)
+
+Happy learning!
