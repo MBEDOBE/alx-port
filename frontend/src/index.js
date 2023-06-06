@@ -4,11 +4,14 @@ import { ThemeProvider } from "@material-tailwind/react";
 
 import App from "./App";
 import "./index.css";
+import { ContextProvider } from "./context/Context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <ThemeProvider>
-    <App />
-  </ThemeProvider>
+  <ContextProvider>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </ContextProvider>
 );

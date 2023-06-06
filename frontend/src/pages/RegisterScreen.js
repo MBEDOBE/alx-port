@@ -1,13 +1,26 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Register = () => {
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
 
-  const submitHandler = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    //TODO: sign in action
+    setError(false);
+    try {
+      const res = await axios.post("/register", {
+        username,
+        email,
+        password,
+      });
+      res.data && window.location.replace("/login");
+    } catch (error) {
+      setError(true);
+    }
   };
   return (
     <div class="lg:flex">
@@ -20,18 +33,18 @@ const Register = () => {
             Register
           </h2>
           <div class="mt-12">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div class="mb-8">
                 <div class="flex justify-between items-center">
                   <div class="text-sm font-bold text-gray-700 tracking-wide">
-                    Full Name
+                    User Name
                   </div>
                 </div>
                 <input
                   class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
                   type="text"
-                  placeholder="Nignan Gmakiye"
-                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Nignan"
+                  onChange={(e) => setUsername(e.target.value)}
                   required
                 />
               </div>
@@ -51,20 +64,6 @@ const Register = () => {
                 <div class="flex justify-between items-center">
                   <div class="text-sm font-bold text-gray-700 tracking-wide">
                     Password
-                  </div>
-                </div>
-                <input
-                  class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
-                  type="password"
-                  placeholder="************"
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-              </div>
-              <div class="mt-8">
-                <div class="flex justify-between items-center">
-                  <div class="text-sm font-bold text-gray-700 tracking-wide">
-                    Confirm Password
                   </div>
                 </div>
                 <input
@@ -98,14 +97,23 @@ const Register = () => {
                   class="bg-green text-gray-100 p-4 w-full rounded-md tracking-wide
                         font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-hoverDark
                         shadow-lg"
+                  type="submit"
                 >
                   Register
                 </button>
+                {error && (
+                  <span style={{ color: "red", marginTop: "8px" }}>
+                    something went wrong
+                  </span>
+                )}
               </div>
             </form>
             <div class="my-12 text-sm font-display font-semibold text-gray-700 text-center">
               Already have an account ?{" "}
-              <Link to="/login" class="cursor-pointer text-hoverLight hover:text-hoverDark">
+              <Link
+                to="/login"
+                class="cursor-pointer text-hoverLight hover:text-hoverDark"
+              >
                 Log In
               </Link>
             </div>
