@@ -1,14 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { Context } from "../context/Context";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const userRef = useRef();
+  const passwordRef = useRef();
+  const { dispatch, isFetching } = useContext(Context);
 
-  const submitHandler = (e)=>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    //TODO: sign in action
-  }
+    dispatch({ type: "LOGIN_START" });
+    try {
+      const res = await axios.post("/auth/login", {
+        username: userRef.current.value,
+        password: passwordRef.current.value,
+      });
+      dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+    } catch (error) {
+      dispatch({ type: "LOGIN_FAILURE" });
+    }
+  };
   return (
     <div class="lg:flex">
       <div class="lg:w-1/2 xl:max-w-screen-sm">
@@ -20,16 +32,16 @@ const Login = () => {
             Log in
           </h2>
           <div class="mt-12">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div>
                 <div class="text-sm font-bold text-gray-700 tracking-wide">
-                  Email Address
+                  User Name
                 </div>
                 <input
                   class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
-                  type="email"
-                  placeholder="support@edinfohub.com"
-                  onChange={(e)=>setEmail(e.target.value)}
+                  type="text"
+                  placeholder="timor"
+                  ref={userRef}
                   required
                 />
               </div>
@@ -51,7 +63,7 @@ const Login = () => {
                   class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
                   type="password"
                   placeholder="************"
-                  onChange={(e)=>setPassword(e.target.value)}
+                  ref={passwordRef}
                   required
                 />
               </div>
@@ -75,6 +87,7 @@ const Login = () => {
               </div>
               <div class="mt-10">
                 <button
+                  type="submit"
                   class="bg-green text-gray-100 p-4 w-full rounded-md tracking-wide
                         font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-hoverDark
                         shadow-lg"
@@ -85,7 +98,10 @@ const Login = () => {
             </form>
             <div class="my-12 text-sm font-display font-semibold text-gray-700 text-center">
               Don't have an account ?{" "}
-              <Link to="/register" class="cursor-pointer text-hoverLight hover:text-hoverDark">
+              <Link
+                to="/register"
+                class="cursor-pointer text-hoverLight hover:text-hoverDark"
+              >
                 Sign up
               </Link>
             </div>
