@@ -1,4 +1,5 @@
 # EdInfoHub
+
 ![Project Version](https://img.shields.io/badge/Version-1.0.0-orange?style=for-the-badge&logo)
 ![Frontend](https://img.shields.io/badge/Frontend-ReactJs-blue?style=for-the-badge&logo=react)
 ![Backend](https://img.shields.io/badge/Database-MongoDb-green?style=for-the-badge&logo=mongodb)
@@ -46,7 +47,16 @@ We would like to express our gratitude to the contributors and developers of the
 
 ## Contact
 
-For any inquiries or feedback, please contact us at [email protected]
+## For any inquiries or feedback, please contact us at [email protected]
+
+## Author
+
+**D. Mbedobe KUNJI**
+
+- [Github](https://github.com/MBEDOBE/)
+- [Youtube](https://youtube.com/@mbedev/)
+- [LinkedIn](https://www.linkedin.com/in/danielmbedobe)
+- [Medium](https://www.medium.com/@danielmbedobe)
+- [Twitter](https://www.twitter.com/@kd_mbedobe)
 
 Happy learning!
-
