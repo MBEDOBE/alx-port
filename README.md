@@ -42,10 +42,8 @@ We would like to express our gratitude to the contributors and developers of the
 
 ## Contact
 
-For any inquiries or feedback, please contact us at [email protected]
-
+For any inquiries or feedback, please contact us at any of the following:
 ## Author
-
 **D. Mbedobe KUNJI**
 
 - [Github](https://github.com/MBEDOBE/)
