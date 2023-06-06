@@ -1,5 +1,10 @@
 # EdInfoHub
 
+![Project Version](https://img.shields.io/badge/Version-1.0.0-orange?style=for-the-badge&logo)
+![Frontend](https://img.shields.io/badge/Frontend-ReactJs-blue?style=for-the-badge&logo=react)
+![Backend](https://img.shields.io/badge/Database-MongoDb-green?style=for-the-badge&logo=mongodb)
+![Backend](https://img.shields.io/badge/Server-Node-lightgrey?style=for-the-badge&logo=node.js)
+
 This project is an Educational Resource Website aimed at providing a comprehensive platform for Ghanaian students to access free educational videos, practice exercises, and study materials in various subjects. The website is designed to support students from primary to senior high school, offering a wide range of resources to enhance their learning experience.
 
 ## Features
@@ -42,8 +47,10 @@ We would like to express our gratitude to the contributors and developers of the
 
 ## Contact
 
-For any inquiries or feedback, please contact us at any of the following:
+## For any inquiries or feedback, please contact us at [email protected]
+
 ## Author
+
 **D. Mbedobe KUNJI**
 
 - [Github](https://github.com/MBEDOBE/)

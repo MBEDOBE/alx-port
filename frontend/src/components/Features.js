@@ -1,12 +1,10 @@
 import React from "react";
-import { Container, CardMedia, Grid } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import {
   Card,
   CardBody,
-  CardFooter,
   CardHeader,
   Typography,
-  Button,
 } from "@material-tailwind/react";
 import VideoIcon from "@mui/icons-material/OndemandVideo";
 import PracticeIcon from "@mui/icons-material/CheckCircleOutline";
