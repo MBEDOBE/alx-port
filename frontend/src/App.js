@@ -9,6 +9,8 @@ import ContactScreen from "./pages/ContactScreen";
 import Register from "./pages/RegisterScreen";
 import { Context } from "./context/Context";
 import Homepage from "./pages/HomePage";
+import Single from "./pages/SinglePage";
+import Write from "./pages/Write";
 
 const App = () => {
   const { user } = useContext(Context);
@@ -21,7 +23,7 @@ const App = () => {
 
         <main>
           <Routes>
-            <Route path="/home" element={<Homepage/>}/>
+            <Route path="/home" element={<Homepage />} />
             <Route path="/login" element={user ? <HomePage /> : <Login />} />
             <Route
               path="/register"
@@ -29,6 +31,8 @@ const App = () => {
             />
             <Route path="/contact" element={<ContactScreen />} />
             <Route path="/" element={<Landing />} />
+            <Route path="/post/:id" element={<Single />} />
+            <Route path="/write" element={<Write />} />
           </Routes>
         </main>
         <Footer />
