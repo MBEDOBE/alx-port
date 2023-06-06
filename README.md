@@ -48,7 +48,7 @@ We would like to express our gratitude to the contributors and developers of the
 ## Contact
 
 ## For any inquiries or feedback, please contact us at any of the following:
-## Autho
+## Author
 **D. Mbedobe KUNJI**
 
 
