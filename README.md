@@ -50,6 +50,7 @@ We would like to express our gratitude to the contributors and developers of the
 ## For any inquiries or feedback, please contact us at any of the following:
 ## Autho
 **D. Mbedobe KUNJI**
+![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)(https://youtube.com/@mbedev/)
 
 - [Github](https://github.com/MBEDOBE/)
 - [Youtube](https://youtube.com/@mbedev/)
