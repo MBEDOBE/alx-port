@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import axios from "axios";
 import { Context } from "../context/Context";
+import AddIcon from '@mui/icons-material/Add';
 
 export default function Write() {
   const [title, setTitle] = useState("");
@@ -35,7 +36,8 @@ export default function Write() {
       <form className="writeForm" onSubmit={handleSubmit}>
         <div className="writeFormGroup">
           <label htmlFor="fileInput">
-            <i className="writeIcon fas fa-plus"></i>
+            <AddIcon/>
+            {/* <i className="writeIcon fas fa-plus"></i> */}
           </label>
           <input
             type="file"

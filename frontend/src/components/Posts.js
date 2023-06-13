@@ -3,7 +3,7 @@ import Post from "./Post";
 
 export default function Posts({ posts }) {
   return (
-    <div className="grid gap-4 grid-cols-3">
+    <div className="grid gap-4 grid-cols-2">
       {posts.map((p) => (
         <Post post={p} />
       ))}
