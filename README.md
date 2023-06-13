@@ -7,6 +7,8 @@
 
 This project is an Educational Resource Website aimed at providing a comprehensive platform for Ghanaian students to access free educational videos, practice exercises, and study materials in various subjects. The website is designed to support students from primary to senior high school, offering a wide range of resources to enhance their learning experience.
 
+Blog Post: [https://medium.com/@danielmbedobe/empowering-education-introducing-our-innovative-educational-resource-platform-53d6eca9043c]
+
 ## Features
 
 - Free access to a vast collection of educational videos covering various subjects.

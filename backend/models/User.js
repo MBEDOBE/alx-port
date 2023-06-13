@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 
+// create a user data object model using mongoose library
 const UserSchema = new mongoose.Schema(
   {
     username: {

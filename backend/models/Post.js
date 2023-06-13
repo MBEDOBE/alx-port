@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// create a post data object model using mongoose library
 const PostSchema = new mongoose.Schema(
   {
     title: {

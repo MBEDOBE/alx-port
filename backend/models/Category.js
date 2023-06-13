@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// create a category data object model using mongoose library
 const CategorySchema = new mongoose.Schema(
   {
     name: {
