@@ -208,6 +208,7 @@ a {
 
 .writeFormGroup {
   margin-left: 150px;
+  margin-bottom: 80px;
   display: flex;
   align-items: center;
 }
@@ -229,20 +230,16 @@ a {
   font-size: 30px;
   border: none;
   padding: 20px;
-  width: 70vw;
+  width: 600px;
 }
 
-.postInput::placeholder {
-  color: rgb(189, 185, 185);
-  font-weight: 400;
-}
 
 .postInput:focus {
   outline-style: none;
 }
 
 .postText {
-  width: 70vw;
+  width: 600px;
   height: 100vh;
   font-family: inherit;
   font-size: 20px;

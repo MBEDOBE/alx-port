@@ -4,9 +4,11 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Context } from "../context/Context";
 import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteIcon from "@mui/icons-material/Delete";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
-export default function SinglePost() {
+export default function SinglePost(props) {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({});
@@ -46,6 +48,11 @@ export default function SinglePost() {
     } catch (err) {}
   };
 
+  const handleDescChange = (e, editor) => {
+    const data = editor.getData();
+    setDesc(data);
+  };
+
   return (
     <div className="singlePost">
       <div className="singlePostWrapper">
@@ -61,13 +68,15 @@ export default function SinglePost() {
             autoFocus
           />
         ) : (
-          <h1 className="singlePostTitle">
+          <h1 className="singlePostTitle font-bold text-2xl tracking-tight">
             {title}
             {post.username === user?.username && (
               <div className="singlePostUpdate">
-                <EditIcon onClick={() => setUpdateMode(true)} color="secondary" />
+                <EditIcon
+                  onClick={() => setUpdateMode(true)}
+                  color="secondary"
+                />
                 <DeleteIcon onClick={handleDelete} color="primary" />
-                
               </div>
             )}
           </h1>
@@ -84,13 +93,23 @@ export default function SinglePost() {
           </span>
         </div>
         {updateMode ? (
-          <textarea
-            className="singlePostDescInput"
-            value={desc}
-            onChange={(e) => setDesc(e.target.value)}
-          />
+          <div style={{ width: "70vw" }} className="mx-auto mb-4">
+            <CKEditor
+              editor={ClassicEditor}
+              data={desc}
+              onChange={handleDescChange}
+            />
+          </div>
         ) : (
-          <p className="singlePostDesc">{desc}</p>
+          // <textarea
+          //   className="singlePostDescInput"
+          //   value={desc}
+          //   onChange={(e) => setDesc(e.target.value)}
+          // />
+          <p
+            className="singlePostDesc"
+            dangerouslySetInnerHTML={{ __html: post.desc }}
+          ></p>
         )}
         {updateMode && (
           <button className="singlePostButton" onClick={handleUpdate}>

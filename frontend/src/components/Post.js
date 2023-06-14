@@ -7,20 +7,23 @@ const Post = ({ post }) => {
     <>
       <div class="max-w-2xl mx-auto">
         <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
-          <a href="#">
+          <Link href="#">
             {post.image && (
               <img class="rounded-t-lg" src={PF + post.image} alt="" />
             )}
-          </a>
+          </Link>
 
           <div class="p-5">
             <Link to={`/post/${post._id}`}>
-              <h5 class="text-green font-bold text-2xl tracking-tight mb-2 ">
+              <h5 class="text-green font-bold text-2xl tracking-tight mb-2">
                 {post.title}
               </h5>
             </Link>
-            <p class="font-normal text-gray-700 mb-3 truncate text-ellipsis">
-              {post.desc}
+            <p
+              class="font-normal text-gray-700 mb-3 truncate text-ellipsis"
+              dangerouslySetInnerHTML={{ __html: post.desc }}
+            >
+              {/* {post.desc} */}
             </p>
             <Link
               to={`/post/${post._id}`}

@@ -11,7 +11,6 @@ import {
   MenuHandler,
   MenuList,
   MenuItem,
-  Chip,
 } from "@material-tailwind/react";
 import {
   ChevronDownIcon,
@@ -20,17 +19,10 @@ import {
   Bars3Icon,
   XMarkIcon,
   ChatBubbleLeftRightIcon,
-  PencilIcon,
-  AcademicCapIcon,
-  BookOpenIcon,
   ChatBubbleOvalLeftIcon,
-  UsersIcon,
-  FolderIcon,
   Square3Stack3DIcon,
   RocketLaunchIcon,
   FaceSmileIcon,
-  PuzzlePieceIcon,
-  GiftIcon,
 } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 
@@ -50,6 +42,7 @@ const navListMenuItems = [
     color: "orange",
     icon: ChatBubbleOvalLeftIcon,
     title: "Primary",
+    pageUrl: "/home",
     description:
       "Foundational education for young learners in a nurturing environment.",
   },
@@ -58,6 +51,7 @@ const navListMenuItems = [
     color: "purple",
     icon: RocketLaunchIcon,
     title: "JHS",
+    pageUrl: "/jhs",
     description:
       "Transition period with a focus on core subjects and exploration.",
   },
@@ -65,6 +59,7 @@ const navListMenuItems = [
     color: "teal",
     icon: FaceSmileIcon,
     title: "SHS",
+    pageUrl: "/shs",
     description:
       "Advanced education with specialized subjects and college preparation.",
   },
@@ -81,8 +76,8 @@ function NavListMenu() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   const renderItems = navListMenuItems.map(
-    ({ icon, title, description, color }, key) => (
-      <Link to="#" key={key}>
+    ({ icon, title, description, color, pageUrl }, key) => (
+      <Link to={pageUrl} key={key}>
         <MenuItem className="flex items-center gap-3 rounded-lg">
           <div className={`rounded-lg p-5 ${colors[color]}`}>
             {React.createElement(icon, {
@@ -235,7 +230,7 @@ export default function NavBar() {
                 {user && "Write"}
               </Link>
               <span
-                className="middle none center rounded-lg bg-hoverDark py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-contrast transition-all hover:shadow-lg hover:shadow-contrast"
+                className="middle none center rounded-lg border-2 bg-hoverDark py-3 px-6 font-sans text-md font-bold uppercase text-white transition duration-200  hover:cursor-pointer"
                 onClick={handleLogout}
               >
                 {user && "Logout"}

@@ -1,7 +1,9 @@
 import { useContext, useState } from "react";
 import axios from "axios";
 import { Context } from "../context/Context";
-import AddIcon from '@mui/icons-material/Add';
+import AddIcon from "@mui/icons-material/Add";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 export default function Write() {
   const [title, setTitle] = useState("");
@@ -24,8 +26,13 @@ export default function Write() {
     }
     try {
       const res = await axios.post("/posts", newPost);
-      window.location.replace("/home/"); // to go to home on publish, use "/"
+      window.location.replace("/home/");
     } catch (error) {}
+  };
+
+  const handleDescChange = (e, editor) => {
+    const data = editor.getData();
+    setDesc(data);
   };
 
   return (
@@ -36,7 +43,7 @@ export default function Write() {
       <form className="writeForm" onSubmit={handleSubmit}>
         <div className="writeFormGroup">
           <label htmlFor="fileInput">
-            <AddIcon/>
+            <AddIcon />
             {/* <i className="writeIcon fas fa-plus"></i> */}
           </label>
           <input
@@ -53,13 +60,18 @@ export default function Write() {
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        <div className="writeFormGroup">
-          <textarea
+        <div style={{ width: "70vw" }} className="mx-auto mb-4">
+          <CKEditor
+            editor={ClassicEditor}
+            data={desc}
+            onChange={handleDescChange}
+          />
+          {/* <textarea
             placeholder="Tell your story..."
             type="text"
             className="postInput postText"
             onChange={(e) => setDesc(e.target.value)}
-          ></textarea>
+          ></textarea> */}
         </div>
         <button className="postSubmit" type="submit">
           Publish
